@@ -1,0 +1,56 @@
+extends layout
+
+block content
+	// playing with tags
+	h1 I'm Jaded
+	p Welcome to #{title}
+	h2 Let's learn about our sweet girl, Jade . . .
+	a(href='http://fall2013.refactoru.com') Example of an 'a' link tag
+	br
+	br
+	hr
+	
+
+	// playing with id & class literals, attributes
+	#input-types
+		h2 Input Types
+		.date-input
+			h3 input field with 'date' type
+			input(type="date")
+		.checked-input
+			br
+			h3 input field with 'text' type and 'placeholder' attribute
+			input(type="text", placeholder="enter name here")
+
+
+	// playing with pipes
+	br
+	hr
+	h2 Piped Text
+	p 
+		| Here's an example
+		br
+		| of some piped text
+
+
+	// let's try some conditionals
+	hr
+	h2 if else
+
+	if name === "Brian"
+		p Hello Brian
+	else
+		p My name is #{name}
+
+
+	// and some mixins
+	hr
+	h2 Mixins
+
+	mixin book(title)
+		div(attributes)= title
+	
+	+book("Night Winds").first
+	+book("Dark Crusade").second
+	+book("Bloodstone").third
+	
